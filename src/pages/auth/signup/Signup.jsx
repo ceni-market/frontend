@@ -46,7 +46,7 @@ function Signup() {
           <div className="signup-card" data-node-id="435:2288">
             <header className="signup-card-header">
               <h1>회원가입</h1>
-              <p>세니마켓을 이용하려면 회원가입이 필요합니다.</p>
+              <p>세니마켓을 이용하려면 회원가입이 필요합니다</p>
             </header>
 
             <div className="signup-steps" aria-label="회원가입 단계">
@@ -58,7 +58,7 @@ function Signup() {
             <form className="signup-form" onSubmit={handleSubmit}>
               <SignupField
                 id="signup-email"
-                label="이메일 (아이디)"
+                label="이메일(아이디)"
                 type="email"
                 placeholder="이메일을 입력해주세요 (example@itcen.com)"
                 icon="bi-envelope"
@@ -94,11 +94,11 @@ function Signup() {
           <div className="signup-intro-copy">
             <strong>
               세니마켓은 ITCEN 구성원을 위한
-              <span>따뜻한 나눔과 신뢰의 공간입니다.</span>
+              <span>따뜻한 나눔과 순환의 공간입니다</span>
             </strong>
             <p>
-              안 쓰는 물건은 나누고,
-              <span>필요한 물건은 알뜰하게 구매하세요!</span>
+              안 쓰는 물건은 나누고
+              <span>필요한 물건은 합리적으로 구매하세요</span>
             </p>
           </div>
           <div className="signup-intro-image">

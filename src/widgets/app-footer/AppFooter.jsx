@@ -21,9 +21,7 @@ function AppFooter() {
 
         <div className="app-footer-right">
           <strong className="app-footer-title">문의 안내</strong>
-          <p className="app-footer-help">
-            세니마켓 이용 관련 문의는 아래로 연락주세요.
-          </p>
+          <p className="app-footer-help">세니마켓 이용 관련 문의는 아래로 연락주세요.</p>
 
           <dl className="app-footer-info">
             <div className="app-footer-info-row">

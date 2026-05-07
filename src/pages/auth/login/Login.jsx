@@ -28,7 +28,7 @@ function Login() {
           <div className="login-card" data-node-id="444:2426">
             <header className="login-card-header">
               <h1>로그인</h1>
-              <p>세니마켓에 오신 것을 환영합니다!</p>
+              <p>세니마켓에 오신 것을 환영합니다</p>
             </header>
 
             <form className="login-form" onSubmit={handleSubmit}>
@@ -50,7 +50,7 @@ function Login() {
                   <input id="login-keep" name="keepLogin" type="checkbox" />
                   <span>로그인 상태 유지</span>
                 </label>
-                <a className="login-find" href="/">
+                <a className="login-find" href="/find-password">
                   비밀번호 찾기 &gt;
                 </a>
               </div>
@@ -88,11 +88,11 @@ function Login() {
           <div className="login-intro-copy">
             <strong>
               세니마켓은 ITCEN 구성원을 위한
-              <span>따뜻한 나눔과 신뢰의 공간입니다.</span>
+              <span>따뜻한 나눔과 순환의 공간입니다</span>
             </strong>
             <p>
-              안 쓰는 물건은 나누고,
-              <span>필요한 물건은 알뜰하게 구매하세요!</span>
+              안 쓰는 물건은 나누고
+              <span>필요한 물건은 합리적으로 구매하세요</span>
             </p>
           </div>
           <div className="login-intro-image">
