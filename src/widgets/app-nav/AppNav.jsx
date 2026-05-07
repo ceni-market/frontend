@@ -14,7 +14,7 @@ const NAV_ITEMS = [
 function AppNav() {
   return (
     <nav className="app-nav" aria-label="상품 카테고리" data-node-id="66:185">
-      <div className="app-nav-inner">
+      <div className="app-nav-inner content-container">
         <a className="app-nav-home" href="/" aria-label="홈">
           <i className="app-nav-home-icon bi bi-house" aria-hidden="true" />
         </a>

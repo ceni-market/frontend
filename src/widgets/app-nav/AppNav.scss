@@ -4,15 +4,14 @@ $nav-border: #e8eef7;
 $nav-surface: #ffffff;
 
 .app-nav {
-  width: 100%;
-  min-width: 1240px;
+  width: var(--content-width);
+  min-width: var(--content-width);
+  margin: 0 auto;
   height: 48px;
   background: $nav-surface;
 
   &-inner {
-    width: 1240px;
     height: 48px;
-    margin: 0 auto;
     padding-left: 43px;
     display: flex;
     align-items: center;

@@ -16,7 +16,7 @@ const NAV_ACTIONS = [
 function AppHeader() {
   return (
     <header className="site-header" data-node-id="66:184">
-      <div className="site-header-inner">
+      <div className="site-header-inner content-container">
         <a className="site-header-brand" href="/" aria-label="세니마켓 홈">
           <span className="site-header-logo">
             <img className="site-header-logo-image" src="/assets/images/logo.png" alt="ITCEN" />

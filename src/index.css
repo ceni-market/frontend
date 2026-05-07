@@ -61,6 +61,10 @@
   font-display: swap;
 }
 
+:root {
+  --content-width: 1240px;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -69,6 +73,11 @@
 
 body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.content-container {
+  width: var(--content-width);
+  margin: 0 auto;
 }
 
 img, picture, video, canvas, svg {

@@ -5,17 +5,16 @@ $header-placeholder: #9aa6b8;
 $header-surface: #ffffff;
 
 .site-header {
-  width: 100%;
-  min-width: 1240px;
+  width: var(--content-width);
+  min-width: var(--content-width);
+  margin: 0 auto;
   height: 80px;
   font-family: inherit;
   background: $header-surface;
   border-bottom: 1px solid $header-border;
 
   &-inner {
-    width: 1240px;
     height: 100%;
-    margin: 0 auto;
     padding: 10px 35px 10px 36px;
     display: grid;
     grid-template-columns: 214px 500px 250px;

@@ -7,15 +7,14 @@ $visual-shadow-primary: rgba(12, 12, 13, 0.1);
 $visual-shadow-secondary: rgba(12, 12, 13, 0.05);
 
 .app-visual {
-  width: 100%;
-  min-width: 1240px;
+  width: var(--content-width);
+  min-width: var(--content-width);
+  margin: 0 auto;
   height: 300px;
   background: $visual-bg;
 
   &-inner {
-    width: 1240px;
     height: 300px;
-    margin: 0 auto;
     padding: 25px 35px 25px 36px;
     display: flex;
     align-items: center;

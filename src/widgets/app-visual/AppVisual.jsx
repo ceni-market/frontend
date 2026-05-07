@@ -12,7 +12,7 @@ const QUICK_ITEMS = [
 function AppVisual() {
   return (
     <section className="app-visual" data-node-id="425:2164">
-      <div className="app-visual-inner">
+      <div className="app-visual-inner content-container">
         <a className="app-visual-banner" href="/" aria-label="세니마켓 안내 배너">
           <img className="app-visual-banner-image" src="/assets/images/visual-banner.png" alt="" />
         </a>
