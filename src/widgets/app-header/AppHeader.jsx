@@ -19,7 +19,7 @@ function AppHeader() {
       <div className="site-header-inner">
         <a className="site-header-brand" href="/" aria-label="세니마켓 홈">
           <span className="site-header-logo">
-            <img src="/참고/header/logo.png" alt="ITCEN" />
+            <img className="site-header-logo-image" src="/assets/images/logo.png" alt="ITCEN" />
           </span>
           <span className="site-header-title">세니마켓</span>
         </a>
@@ -29,21 +29,22 @@ function AppHeader() {
             상품 검색
           </label>
           <input
+            className="site-header-search-input"
             id="site-search"
             type="search"
             placeholder="상품명, 키워드로 검색해보세요"
             aria-label="상품명, 키워드 검색"
           />
-          <button type="submit" aria-label="검색">
-            <i className="bi bi-search" aria-hidden="true" />
+          <button className="site-header-search-button" type="submit" aria-label="검색">
+            <i className="site-header-search-icon bi bi-search" aria-hidden="true" />
           </button>
         </form>
 
         <nav className="site-header-actions" aria-label="회원 메뉴">
           {NAV_ACTIONS.map((action) => (
             <a className={action.className} href="/" key={action.label}>
-              <i className={`bi ${action.icon}`} aria-hidden="true" />
-              <span>{action.label}</span>
+              <i className={`site-header-button-icon bi ${action.icon}`} aria-hidden="true" />
+              <span className="site-header-button-label">{action.label}</span>
             </a>
           ))}
         </nav>

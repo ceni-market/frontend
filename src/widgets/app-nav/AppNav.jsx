@@ -1,0 +1,37 @@
+import './AppNav.scss';
+
+const NAV_ITEMS = [
+  { label: '전체', href: '/' },
+  { label: 'ITㆍ디지털', href: '/' },
+  { label: '가전제품', href: '/' },
+  { label: '가구ㆍ인테리어', href: '/' },
+  { label: '생활ㆍ주방', href: '/' },
+  { label: '스포츠ㆍ취미', href: '/' },
+  { label: '도서ㆍ음반', href: '/' },
+  { label: '유아ㆍ기타', href: '/' },
+];
+
+function AppNav() {
+  return (
+    <nav className="app-nav" aria-label="상품 카테고리" data-node-id="66:185">
+      <div className="app-nav-inner">
+        <a className="app-nav-home" href="/" aria-label="홈">
+          <i className="app-nav-home-icon bi bi-house" aria-hidden="true" />
+        </a>
+
+        {NAV_ITEMS.map((item) => (
+          <a className="app-nav-link" href={item.href} key={item.label}>
+            {item.label}
+          </a>
+        ))}
+
+        <a className="app-nav-donation" href="/">
+          <i className="app-nav-donation-icon bi bi-heart-fill" aria-hidden="true" />
+          <span className="app-nav-donation-label">나눔게시판</span>
+        </a>
+      </div>
+    </nav>
+  );
+}
+
+export default AppNav;
