@@ -26,13 +26,15 @@ $features-shadow: rgba(12, 12, 13, 0.05);
 
   &-item {
     width: 250px;
-    height: 50px;
+    height: 70px;
     display: flex;
     align-items: center;
     gap: 18px;
-    flex: 0 0 auto;
     border-right: 1px solid $features-border;
     box-shadow: 0 1px 4px $features-shadow;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-radius: 10px;
   }
 
   &-icon-box {

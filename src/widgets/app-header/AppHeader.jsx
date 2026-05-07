@@ -5,11 +5,13 @@ const NAV_ACTIONS = [
     label: '로그인',
     icon: 'bi-person',
     className: 'site-header-button site-header-button-ghost',
+    href: '/login',
   },
   {
     label: '회원가입',
     icon: 'bi-person-add',
     className: 'site-header-button site-header-button-primary',
+    href: '/signup',
   },
 ];
 
@@ -42,7 +44,7 @@ function AppHeader() {
 
         <nav className="site-header-actions" aria-label="회원 메뉴">
           {NAV_ACTIONS.map((action) => (
-            <a className={action.className} href="/" key={action.label}>
+            <a className={action.className} href={action.href} key={action.label}>
               <i className={`site-header-button-icon bi ${action.icon}`} aria-hidden="true" />
               <span className="site-header-button-label">{action.label}</span>
             </a>
