@@ -1,4 +1,4 @@
-import './AppPopular.scss';
+import './HomePopular.scss';
 
 const POPULAR_PRODUCTS = [
   {
@@ -45,38 +45,38 @@ const POPULAR_PRODUCTS = [
   },
 ];
 
-function AppPopular() {
+function HomePopular() {
   return (
-    <section className="app-popular" data-node-id="425:2079">
-      <div className="app-popular-inner content-container">
-        <div className="app-popular-header" data-node-id="425:2160">
-          <h2 className="app-popular-title">지금 인기 있는 상품</h2>
-          <a className="app-popular-more" href="/">
+    <section className="home-popular" data-node-id="425:2079">
+      <div className="home-popular-inner content-container">
+        <div className="home-popular-header" data-node-id="425:2160">
+          <h2 className="home-popular-title">지금 인기 있는 상품</h2>
+          <a className="home-popular-more" href="/">
             더 보기 &gt;
           </a>
         </div>
 
-        <div className="app-popular-list" data-node-id="425:2081">
+        <div className="home-popular-list" data-node-id="425:2081">
           {POPULAR_PRODUCTS.map((product, index) => (
-            <a className="app-popular-card" href="/" key={`${product.title}-${index}`}>
-              <div className="app-popular-thumb">
+            <a className="home-popular-card" href="/" key={`${product.title}-${index}`}>
+              <div className="home-popular-thumb">
                 <img
-                  className="app-popular-thumb-image"
+                  className="home-popular-thumb-image"
                   src="/assets/images/popular-sample.jpeg"
                   alt=""
                 />
-                <span className="app-popular-like">
-                  <i className="app-popular-like-icon bi bi-heart" aria-hidden="true" />
-                  <span className="app-popular-like-count">{product.likes}</span>
+                <span className="home-popular-like">
+                  <i className="home-popular-like-icon bi bi-heart" aria-hidden="true" />
+                  <span className="home-popular-like-count">{product.likes}</span>
                 </span>
               </div>
 
-              <div className="app-popular-info">
-                <strong className="app-popular-card-title">{product.title}</strong>
-                <span className="app-popular-category">{product.category}</span>
-                <span className="app-popular-meta">
-                  <span className="app-popular-price">{product.price}</span>
-                  <span className="app-popular-time">{product.time}</span>
+              <div className="home-popular-info">
+                <strong className="home-popular-card-title">{product.title}</strong>
+                <span className="home-popular-category">{product.category}</span>
+                <span className="home-popular-meta">
+                  <span className="home-popular-price">{product.price}</span>
+                  <span className="home-popular-time">{product.time}</span>
                 </span>
               </div>
             </a>
@@ -87,4 +87,4 @@ function AppPopular() {
   );
 }
 
-export default AppPopular;
+export default HomePopular;
