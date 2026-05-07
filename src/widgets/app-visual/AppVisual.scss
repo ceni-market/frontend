@@ -2,7 +2,7 @@ $visual-bg: #f8fafc;
 $visual-surface: #ffffff;
 $visual-quick-bg: #eaf5ff;
 $visual-primary: #0757c8;
-$visual-text: #000000;
+$visual-text: var(--text-default);
 $visual-shadow-primary: rgba(12, 12, 13, 0.1);
 $visual-shadow-secondary: rgba(12, 12, 13, 0.05);
 
