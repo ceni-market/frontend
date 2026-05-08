@@ -1,3 +1,4 @@
+import { Link, NavLink } from 'react-router-dom';
 import './AppHeader.scss';
 
 const NAV_ACTIONS = [
@@ -19,12 +20,12 @@ function AppHeader() {
   return (
     <header className="site-header" data-node-id="66:184">
       <div className="site-header-inner content-container">
-        <a className="site-header-brand" href="/" aria-label="세니마켓 홈">
+        <Link className="site-header-brand" to="/" aria-label="세니마켓 홈">
           <span className="site-header-logo">
             <img className="site-header-logo-image" src="/assets/images/logo.png" alt="ITCEN" />
           </span>
           <span className="site-header-title">세니마켓</span>
-        </a>
+        </Link>
 
         <form className="site-header-search" role="search">
           <label className="sr-only" htmlFor="site-search">
@@ -44,10 +45,10 @@ function AppHeader() {
 
         <nav className="site-header-actions" aria-label="회원 메뉴">
           {NAV_ACTIONS.map((action) => (
-            <a className={action.className} href={action.href} key={action.label}>
+            <NavLink className={action.className} to={action.href} key={action.label}>
               <i className={`site-header-button-icon bi ${action.icon}`} aria-hidden="true" />
               <span className="site-header-button-label">{action.label}</span>
-            </a>
+            </NavLink>
           ))}
         </nav>
       </div>

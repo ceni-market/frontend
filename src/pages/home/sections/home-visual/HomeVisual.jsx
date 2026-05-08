@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './HomeVisual.scss';
 
 const QUICK_ITEMS = [
@@ -13,16 +14,16 @@ function HomeVisual() {
   return (
     <section className="home-visual" data-node-id="425:2164">
       <div className="home-visual-inner content-container">
-        <a className="home-visual-banner" href="/" aria-label="세니마켓 안내 배너">
+        <Link className="home-visual-banner" to="/" aria-label="세니마켓 안내 배너">
           <img className="home-visual-banner-image" src="/assets/images/visual-banner.png" alt="" />
-        </a>
+        </Link>
 
         <nav className="home-visual-quick" aria-label="빠른 메뉴">
           {QUICK_ITEMS.map((item) => (
-            <a className="home-visual-quick-item" href={item.href} key={item.label}>
+            <Link className="home-visual-quick-item" to={item.href} key={item.label}>
               <i className={`home-visual-quick-icon bi ${item.icon}`} aria-hidden="true" />
               <span className="home-visual-quick-label">{item.label}</span>
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

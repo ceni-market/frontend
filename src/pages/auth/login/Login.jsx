@@ -2,6 +2,7 @@ import AppFeatures from '../../../widgets/app-features/AppFeatures.jsx';
 import AppFooter from '../../../widgets/app-footer/AppFooter.jsx';
 import AppHeader from '../../../widgets/app-header/AppHeader.jsx';
 import AppNav from '../../../widgets/app-nav/AppNav.jsx';
+import { Link } from 'react-router-dom';
 import './Login.scss';
 
 function LoginField({ id, type, placeholder, icon }) {
@@ -50,9 +51,9 @@ function Login() {
                   <input id="login-keep" name="keepLogin" type="checkbox" />
                   <span>로그인 상태 유지</span>
                 </label>
-                <a className="login-find" href="/find-password">
+                <Link className="login-find" to="/find-password">
                   비밀번호 찾기 &gt;
-                </a>
+                </Link>
               </div>
 
               <button className="login-submit" type="submit">
@@ -79,7 +80,7 @@ function Login() {
 
             <p className="login-signup">
               <span>아직 계정이 없으신가요?</span>
-              <a href="/signup">회원가입 &gt;</a>
+              <Link to="/signup">회원가입 &gt;</Link>
             </p>
           </div>
         </div>

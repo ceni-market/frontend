@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './HomeSub.scss';
 
 const RECENT_SHARES = [
@@ -12,7 +13,7 @@ function HomeSub() {
     <section className="home-sub" data-node-id="425:2031">
       <div className="home-sub-inner content-container">
         <div className="home-sub-content">
-          <a className="home-sub-banner home-sub-donation" href="/">
+          <Link className="home-sub-banner home-sub-donation" to="/">
             <img
               className="home-sub-banner-image"
               src="/assets/images/sub-donation.png"
@@ -27,9 +28,9 @@ function HomeSub() {
             <span className="home-sub-banner-button home-sub-donation-button">
               나눔 게시판 바로가기 &gt;
             </span>
-          </a>
+          </Link>
 
-          <a className="home-sub-banner home-sub-guide" href="/">
+          <Link className="home-sub-banner home-sub-guide" to="/">
             <img
               className="home-sub-banner-image"
               src="/assets/images/sub-guide.png"
@@ -49,27 +50,27 @@ function HomeSub() {
             <span className="home-sub-banner-button home-sub-guide-button">
               가이드 보기 &gt;
             </span>
-          </a>
+          </Link>
 
           <section className="home-sub-recent" aria-labelledby="recent-share-title">
             <div className="home-sub-recent-header">
               <h2 className="home-sub-recent-title" id="recent-share-title">
                 최근 나눔 글
               </h2>
-              <a className="home-sub-recent-more" href="/">
+              <Link className="home-sub-recent-more" to="/">
                 더 보기 &gt;
-              </a>
+              </Link>
             </div>
 
             <div className="home-sub-recent-list">
               {RECENT_SHARES.map((share) => (
-                <a className="home-sub-recent-item" href="/" key={share}>
+                <Link className="home-sub-recent-item" to="/" key={share}>
                   <span className="home-sub-recent-left">
                     <span className="home-sub-recent-badge">나눔</span>
                     <span className="home-sub-recent-name">{share}</span>
                   </span>
                   <span className="home-sub-recent-time">2시간 전</span>
-                </a>
+                </Link>
               ))}
             </div>
           </section>

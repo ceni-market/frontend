@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './HomePopular.scss';
 
 const POPULAR_PRODUCTS = [
@@ -51,14 +52,14 @@ function HomePopular() {
       <div className="home-popular-inner content-container">
         <div className="home-popular-header" data-node-id="425:2160">
           <h2 className="home-popular-title">지금 인기 있는 상품</h2>
-          <a className="home-popular-more" href="/">
+          <Link className="home-popular-more" to="/">
             더 보기 &gt;
-          </a>
+          </Link>
         </div>
 
         <div className="home-popular-list" data-node-id="425:2081">
           {POPULAR_PRODUCTS.map((product, index) => (
-            <a className="home-popular-card" href="/" key={`${product.title}-${index}`}>
+            <Link className="home-popular-card" to="/" key={`${product.title}-${index}`}>
               <div className="home-popular-thumb">
                 <img
                   className="home-popular-thumb-image"
@@ -79,7 +80,7 @@ function HomePopular() {
                   <span className="home-popular-time">{product.time}</span>
                 </span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

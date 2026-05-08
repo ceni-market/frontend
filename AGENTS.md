@@ -28,4 +28,6 @@ Figma MCP 서버를 사용해 피그마에 디자인한 작업물을 프로젝�
 12. 부트스트랩 아이콘은 public/assets/images 여기 폴더 icon.txt에 넣어둘게.
 13. css요소에 패딩을 설정할 때 무조건 좌 우 패딩 동일하게 해줘. 피그마 디자인보다 이걸 우선해.
 14. header,nav,features,footer 컴포넌트는 widgets 폴더 아래에 있어.
+15. 페이지를 이동해야 하는 코드를 작성해야 할 때는 a태그 대신 리액트의 navlink를 사용한다.
+16. aria-label data-node-id 는 작성하지 말아줘.
 

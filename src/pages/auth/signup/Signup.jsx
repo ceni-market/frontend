@@ -2,6 +2,7 @@ import AppFeatures from '../../../widgets/app-features/AppFeatures.jsx';
 import AppFooter from '../../../widgets/app-footer/AppFooter.jsx';
 import AppHeader from '../../../widgets/app-header/AppHeader.jsx';
 import AppNav from '../../../widgets/app-nav/AppNav.jsx';
+import { Link, useNavigate } from 'react-router-dom';
 import './Signup.scss';
 
 const SIGNUP_STEPS = [
@@ -32,8 +33,11 @@ function SignupField({ id, label, type = 'text', placeholder, icon, help }) {
 }
 
 function Signup() {
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    navigate('/email-confirm');
   };
 
   return (
@@ -85,7 +89,7 @@ function Signup() {
 
             <p className="signup-login">
               <span>이미 계정이 있으신가요?</span>
-              <a href="/login">로그인 &gt;</a>
+              <Link to="/login">로그인 &gt;</Link>
             </p>
           </div>
         </div>
@@ -94,11 +98,11 @@ function Signup() {
           <div className="signup-intro-copy">
             <strong>
               세니마켓은 ITCEN 구성원을 위한
-              <span>따뜻한 나눔과 순환의 공간입니다</span>
+              <span>따뜻한 나눔과 신뢰의 공간입니다</span>
             </strong>
             <p>
               안 쓰는 물건은 나누고
-              <span>필요한 물건은 합리적으로 구매하세요</span>
+              <span>필요한 물건은 알뜰하게 구매하세요</span>
             </p>
           </div>
           <div className="signup-intro-image">

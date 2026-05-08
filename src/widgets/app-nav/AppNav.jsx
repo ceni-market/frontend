@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './AppNav.scss';
 
 const NAV_ITEMS = [
@@ -15,20 +16,20 @@ function AppNav() {
   return (
     <nav className="app-nav" aria-label="상품 카테고리" data-node-id="66:185">
       <div className="app-nav-inner content-container">
-        <a className="app-nav-home" href="/" aria-label="홈">
+        <NavLink className="app-nav-home" to="/" aria-label="홈">
           <i className="app-nav-home-icon bi bi-house" aria-hidden="true" />
-        </a>
+        </NavLink>
 
         {NAV_ITEMS.map((item) => (
-          <a className="app-nav-link" href={item.href} key={item.label}>
+          <NavLink className="app-nav-link" to={item.href} key={item.label}>
             {item.label}
-          </a>
+          </NavLink>
         ))}
 
-        <a className="app-nav-donation" href="/">
+        <NavLink className="app-nav-donation" to="/">
           <i className="app-nav-donation-icon bi bi-heart-fill" aria-hidden="true" />
           <span className="app-nav-donation-label">나눔게시판</span>
-        </a>
+        </NavLink>
       </div>
     </nav>
   );

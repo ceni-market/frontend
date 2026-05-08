@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './AppFooter.scss';
 
 function AppFooter() {
@@ -5,9 +6,9 @@ function AppFooter() {
     <footer className="app-footer" data-node-id="425:2028">
       <div className="app-footer-inner content-container">
         <div className="app-footer-left">
-          <a className="app-footer-brand" href="/" aria-label="세니마켓 홈">
+          <Link className="app-footer-brand" to="/" aria-label="세니마켓 홈">
             <img className="app-footer-logo" src="/assets/images/footer-logo.png" alt="" />
-          </a>
+          </Link>
 
           <p className="app-footer-desc">
             <span className="app-footer-desc-line">
