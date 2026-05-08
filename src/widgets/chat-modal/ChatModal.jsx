@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import './ChatModal.scss';
 
 const CHAT_MESSAGES = [
@@ -34,10 +35,59 @@ const CHAT_MESSAGES = [
 ];
 
 function ChatModal({ onClose }) {
+  const dragStateRef = useRef(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+
+  useEffect(() => {
+    const handlePointerMove = (event) => {
+      if (!dragStateRef.current) {
+        return;
+      }
+
+      const { startX, startY, originX, originY } = dragStateRef.current;
+      setPosition({
+        x: originX + event.clientX - startX,
+        y: originY + event.clientY - startY,
+      });
+    };
+
+    const handlePointerUp = () => {
+      dragStateRef.current = null;
+      setIsDragging(false);
+    };
+
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerup', handlePointerUp);
+
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
+    };
+  }, []);
+
+  const handleHeaderPointerDown = (event) => {
+    if (event.target.closest('input, button')) {
+      return;
+    }
+
+    dragStateRef.current = {
+      startX: event.clientX,
+      startY: event.clientY,
+      originX: position.x,
+      originY: position.y,
+    };
+    setIsDragging(true);
+  };
+
   return (
     <div className="chat-modal-overlay" onMouseDown={onClose}>
-      <section className="chat-modal" onMouseDown={(event) => event.stopPropagation()}>
-        <header className="chat-modal-header">
+      <section
+        className={`chat-modal${isDragging ? ' chat-modal-dragging' : ''}`}
+        style={{ transform: `translate(${position.x}px, ${position.y}px) scale(0.8)` }}
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <header className="chat-modal-header" onPointerDown={handleHeaderPointerDown}>
           <h2>채팅</h2>
           <label className="chat-modal-search" htmlFor="chat-room-search">
             <i className="bi bi-search" aria-hidden="true" />
