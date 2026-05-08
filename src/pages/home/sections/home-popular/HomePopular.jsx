@@ -59,7 +59,7 @@ function HomePopular() {
 
         <div className="home-popular-list" data-node-id="425:2081">
           {POPULAR_PRODUCTS.map((product, index) => (
-            <Link className="home-popular-card" to="/" key={`${product.title}-${index}`}>
+            <Link className="home-popular-card" to="/products/1" key={`${product.title}-${index}`}>
               <div className="home-popular-thumb">
                 <img
                   className="home-popular-thumb-image"
