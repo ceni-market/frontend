@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import './AppNav.scss';
 
 const NAV_ITEMS = [
-  { label: '전체', href: '/' },
+  { label: '전체', href: '/products' },
   { label: 'ITㆍ디지털', href: '/' },
   { label: '가전제품', href: '/' },
   { label: '가구ㆍ인테리어', href: '/' },
