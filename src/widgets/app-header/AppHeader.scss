@@ -148,7 +148,10 @@ $header-surface: #ffffff;
     gap: 10px;
     border: 1px solid transparent;
     border-radius: 10px;
+    background: transparent;
     color: var(--text-default);
+    cursor: pointer;
+    font-family: inherit;
     font-size: 12px;
     font-weight: 500;
     line-height: 1;
@@ -166,7 +169,7 @@ $header-surface: #ffffff;
 
   &-write-button {
     height: 42px;
-    padding: 0 20px 0 17px;
+    padding: 0 18px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
