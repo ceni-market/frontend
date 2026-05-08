@@ -8,6 +8,11 @@ import SignupComplete from "./pages/auth/signup-complete/SignupComplete.jsx";
 import ProductDetail from "./pages/product/detail/ProductDetail.jsx";
 import ProductList from "./pages/product/list/ProductList.jsx";
 import ProductWrite from "./pages/product/write/ProductWrite.jsx";
+import Mypage from "./pages/mypage/Mypage.jsx";
+import MyRegisteredPosts from "./pages/mypage/MyRegisteredPosts.jsx";
+import TradeHistory from "./pages/mypage/TradeHistory.jsx";
+import DonationPosts from "./pages/mypage/DonationPosts.jsx";
+import AccountSettings from "./pages/mypage/AccountSettings.jsx";
 import './App.css';
 
 function App() {
@@ -26,6 +31,11 @@ function App() {
         <Route path="/posts/new" element={<ProductWrite />} />
         <Route path="/products/:productId" element={<ProductDetail />} />
         <Route path="/posts/:postId" element={<ProductDetail />} />
+        <Route path="/mypage" element={<Mypage />} />
+        <Route path="/mypage/posts" element={<MyRegisteredPosts />} />
+        <Route path="/mypage/trades" element={<TradeHistory />} />
+        <Route path="/mypage/donations" element={<DonationPosts />} />
+        <Route path="/mypage/account" element={<AccountSettings />} />
       </Routes>
   )
 }
