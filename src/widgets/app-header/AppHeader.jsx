@@ -1,5 +1,9 @@
+import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './AppHeader.scss';
+
+const AUTH_STORAGE_KEY = 'ceni-market-auth';
+const AUTH_CHANGE_EVENT = 'ceni-market-auth-change';
 
 const NAV_ACTIONS = [
   {
@@ -16,11 +20,58 @@ const NAV_ACTIONS = [
   },
 ];
 
+const LOGGED_IN_ACTIONS = [
+  {
+    label: '채팅',
+    icon: 'bi-chat-dots',
+    className: 'site-header-menu-button site-header-menu-button-active',
+    href: '/chat',
+  },
+  {
+    label: '마이페이지',
+    icon: 'bi-person',
+    className: 'site-header-menu-button',
+    href: '/mypage',
+  },
+  {
+    label: '글쓰기',
+    icon: 'bi-pencil',
+    className: 'site-header-write-button',
+    href: '/posts/new',
+  },
+];
+
+function getLoginState() {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  return window.localStorage.getItem(AUTH_STORAGE_KEY) === 'logged-in';
+}
+
 function AppHeader() {
+  const [isLoggedIn, setIsLoggedIn] = useState(getLoginState);
+
+  useEffect(() => {
+    const syncLoginState = () => {
+      setIsLoggedIn(getLoginState());
+    };
+
+    window.addEventListener('storage', syncLoginState);
+    window.addEventListener(AUTH_CHANGE_EVENT, syncLoginState);
+
+    return () => {
+      window.removeEventListener('storage', syncLoginState);
+      window.removeEventListener(AUTH_CHANGE_EVENT, syncLoginState);
+    };
+  }, []);
+
+  const actions = isLoggedIn ? LOGGED_IN_ACTIONS : NAV_ACTIONS;
+
   return (
-    <header className="site-header" data-node-id="66:184">
+    <header className="site-header">
       <div className="site-header-inner content-container">
-        <Link className="site-header-brand" to="/" aria-label="세니마켓 홈">
+        <Link className="site-header-brand" to="/">
           <span className="site-header-logo">
             <img className="site-header-logo-image" src="/assets/images/logo.png" alt="ITCEN" />
           </span>
@@ -36,15 +87,14 @@ function AppHeader() {
             id="site-search"
             type="search"
             placeholder="상품명, 키워드로 검색해보세요"
-            aria-label="상품명, 키워드 검색"
           />
-          <button className="site-header-search-button" type="submit" aria-label="검색">
+          <button className="site-header-search-button" type="submit">
             <i className="site-header-search-icon bi bi-search" aria-hidden="true" />
           </button>
         </form>
 
-        <nav className="site-header-actions" aria-label="회원 메뉴">
-          {NAV_ACTIONS.map((action) => (
+        <nav className={`site-header-actions${isLoggedIn ? ' site-header-actions-logged-in' : ''}`}>
+          {actions.map((action) => (
             <NavLink className={action.className} to={action.href} key={action.label}>
               <i className={`site-header-button-icon bi ${action.icon}`} aria-hidden="true" />
               <span className="site-header-button-label">{action.label}</span>

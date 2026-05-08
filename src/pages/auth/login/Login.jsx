@@ -5,6 +5,9 @@ import AppNav from '../../../widgets/app-nav/AppNav.jsx';
 import { Link } from 'react-router-dom';
 import './Login.scss';
 
+const AUTH_STORAGE_KEY = 'ceni-market-auth';
+const AUTH_CHANGE_EVENT = 'ceni-market-auth-change';
+
 function LoginField({ id, type, placeholder, icon }) {
   return (
     <label className="login-field" htmlFor={id}>
@@ -17,6 +20,8 @@ function LoginField({ id, type, placeholder, icon }) {
 function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
+    window.localStorage.setItem(AUTH_STORAGE_KEY, 'logged-in');
+    window.dispatchEvent(new Event(AUTH_CHANGE_EVENT));
   };
 
   return (

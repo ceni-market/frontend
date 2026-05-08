@@ -102,6 +102,10 @@ $header-surface: #ffffff;
     gap: 22px;
   }
 
+  &-actions-logged-in {
+    gap: 15px;
+  }
+
   &-button {
     height: 42px;
     padding: 0 21px;
@@ -132,6 +136,53 @@ $header-surface: #ffffff;
   &-button-primary {
     color: #ffffff;
     background: $header-primary;
+  }
+
+  &-menu-button {
+    width: 100px;
+    height: 60px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: var(--text-default);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+
+    .site-header-button-icon {
+      font-size: 20px;
+    }
+  }
+
+  &-menu-button-active {
+    border-color: $header-primary;
+    color: $header-primary;
+  }
+
+  &-write-button {
+    height: 42px;
+    padding: 0 20px 0 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid $header-primary;
+    border-radius: 10px;
+    background: $header-primary;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+
+    .site-header-button-icon {
+      font-size: 16px;
+    }
   }
 }
 
