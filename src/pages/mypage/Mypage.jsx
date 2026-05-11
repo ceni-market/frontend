@@ -4,6 +4,9 @@ import MypagePostRow from './components/MypagePostRow.jsx';
 import { mypagePosts, recentTrades } from './mypageData.js';
 import './Mypage.scss';
 
+const AUTH_STORAGE_KEY = 'ceni-market-auth';
+const AUTH_CHANGE_EVENT = 'ceni-market-auth-change';
+
 const summaryItems = [
   { label: '판매한 상품', count: 8, href: '/mypage/trades' },
   { label: '관심 상품', count: 5, href: '/mypage' },
@@ -12,6 +15,11 @@ const summaryItems = [
 ];
 
 function ProfileSummary() {
+  const handleLogout = () => {
+    window.localStorage.removeItem(AUTH_STORAGE_KEY);
+    window.dispatchEvent(new Event(AUTH_CHANGE_EVENT));
+  };
+
   return (
     <section className="mypage-profile-panel">
       <div className="mypage-profile">
@@ -24,6 +32,9 @@ function ProfileSummary() {
             이동규 님 <span>👋</span>
           </strong>
           <p>안녕하세요! 세니마켓에서 즐거운 거래와 나눔을 경험하세요.</p>
+          <button className="mypage-logout-button" type="button" onClick={handleLogout}>
+            로그아웃
+          </button>
         </div>
       </div>
 

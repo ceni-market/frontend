@@ -143,6 +143,24 @@ $mypage-done-bg: #f0f1f3;
 .mypage-profile-copy {
   width: 184px;
 
+  .mypage-logout-button {
+    width: 92px;
+    height: 30px;
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $mypage-input-border;
+    border-radius: 6px;
+    background: $mypage-surface;
+    color: $mypage-muted;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
   strong {
     display: flex;
     align-items: center;
