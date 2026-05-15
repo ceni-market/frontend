@@ -61,14 +61,36 @@
   font-display: swap;
 }
 
+:root {
+  --content-width: 1240px;
+  --font-family-base: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --text-default: #1f2937;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: inherit;
 }
 
+html,
 body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: var(--font-family-base);
+  color: var(--text-default);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+.content-container {
+  width: var(--content-width);
+  margin: 0 auto;
 }
 
 img, picture, video, canvas, svg {
