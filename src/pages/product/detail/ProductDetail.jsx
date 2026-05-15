@@ -98,7 +98,7 @@ function ProductDetail() {
           </article>
 
           <aside className="product-detail-side" data-node-id="456:2002">
-            <button className="product-detail-chat" type="button">
+            <button className="product-detail-chat" type="button" >
               <i className="bi bi-chat-dots" aria-hidden="true" />
               <span>1:1 채팅으로 문의하기</span>
             </button>
