@@ -19,8 +19,13 @@ import {useEffect} from "react";
 function App() {
 
       useEffect(() => {
+            console.log("userAgent:", navigator.userAgent);
+            console.log("host:", window.location.host);
+
             const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
             const host = window.location.host;
+
+            console.log("isMobile:", isMobile);
 
             if (isMobile && host === "ceni-market.site") {
                   window.location.href = "https://m.ceni-market.site/mobile/login";
