@@ -23,7 +23,7 @@ function App() {
             const host = window.location.host;
 
             if (isMobile && host === "ceni-market.site") {
-                  window.location.href = "https://m.ceni-market.site/login";
+                  window.location.href = "https://m.ceni-market.site/mobile/login";
             }
       }, []);
 
