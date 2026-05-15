@@ -19,15 +19,22 @@ import {useEffect} from "react";
 function App() {
 
       useEffect(() => {
-            console.log("userAgent:", navigator.userAgent);
-            console.log("host:", window.location.host);
-
             const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-            const host = window.location.host;
+            const hostname = window.location.hostname;
 
             console.log("isMobile:", isMobile);
+            console.log("hostname:", hostname);
 
-            if (isMobile && host === "ceni-market.site") {
+            // 이미 모바일 도메인이면 리다이렉트 안함
+            if (hostname === "m.ceni-market.site") {
+                  return;
+            }
+
+            // 모바일 기기로 접속했을 때만 모바일 페이지 이동
+            if (
+                isMobile &&
+                hostname.endsWith("ceni-market.site")
+            ) {
                   window.location.href = "https://m.ceni-market.site/mobile/login";
             }
       }, []);
