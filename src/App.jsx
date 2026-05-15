@@ -19,25 +19,12 @@ import {useEffect} from "react";
 function App() {
 
       useEffect(() => {
-
-            const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(
-                navigator.userAgent
-            );
-
+            const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
             const host = window.location.host;
 
-            // PC 도메인에서 모바일 접속
             if (isMobile && host === "ceni-market.site") {
-                  window.location.href =
-                      "https://m.ceni-market.site" + window.location.pathname;
+                  window.location.href = "https://m.ceni-market.site/login";
             }
-
-            // 모바일 도메인에서 PC 접속
-            if (!isMobile && host === "m.ceni-market.site") {
-                  window.location.href =
-                      "https://ceni-market.site" + window.location.pathname;
-            }
-
       }, []);
 
   return (
